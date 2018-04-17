@@ -1,0 +1,370 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" href="css/style.css"/>
+<!--Luara样式文件-->
+<link rel="stylesheet" href="css/luara.css"/>
+
+<script src="js/jquery.js"></script>
+<script src="js/jquery-1.8.3.min.js"></script>
+<!--Luara js文件-->
+<script src="js/jquery.luara.0.0.1.min.js"></script>
+<style>
+/*重置*/
+body{ margin:0;}
+a{ text-decoration:none;}
+h1,h2,h3,h4,h5{ font-weight:normal; margin:0;}
+p{ margin:0; padding:0;}
+ul{ margin:0; padding:0;}
+li{ list-style:none; margin:0; padding:0;}
+
+
+/*归类*/
+.clearfix{ clear:both;}
+
+/*顶部*/
+.top_box{ width:100%;}
+.top_box_center{ width:1000px; margin:0 auto; overflow:hidden;}
+.top_box_center img{ float:left; margin:20px 0 16px 0;}
+.top_box_center_right{ float:right; margin-top:10px;}
+.top_box_center_right a{ font-size:14px; color:#666666;}
+
+.nav_box{ background-image:url(img/nav_bg.png); background-repeat:repeat-x;}
+.nav_box ul{ width:1000px;margin:0 auto; overflow:hidden;}
+.nav_box ul li{ float:left; line-height:58px; padding:0 25px;}
+.nav_box ul li a{ font-size:18px; color:#333333; font-family:"微软雅黑"}
+
+/*banner*/
+.banner_container{overflow:hidden;height:500px;position:relative;}
+.banner{position:absolute;left:50%;top:0;margin-left:-960px;}
+
+/*banner_btn*/
+.banner_btn{position:absolute;left:50%;margin-left:-23px;bottom:10px;}
+.banner_btn li{float:left;width:10px;height:10px; border-radius:50%;background-color:#267bbf;margin:0 4px;}
+.banner_btn .currentLi{background-color:white;}
+/*banner_jquery*/
+.banner img{float:left;}
+.banner_btn li{cursor:pointer;}
+
+/*内容*/
+.centent{ width:1000px; overflow:hidden; margin:0 auto;}
+.centent_left{ float:left; width:620px; height:auto; margin-top:20px;}
+.news_top_top h1{ float:left; font-size:16px; margin-bottom:5px; font-family:"黑体"; color:#333333; font-weight:bold;}
+.news_top_top a{ float:right; margin-right:10px;  font-size:8px;}
+.news_top_top{ border-bottom:2px solid #dbdbdb;}
+.news_top_bottom_left{ float:left;}
+.news_top_bottom_right{ float:left; margin-left:10px; width:310px; height:auto;}
+.news_top_bottom_right h1{ font-size:16px; color:#336699; font-weight:bold; margin-left:30px; margin-top:10px;}
+.news_top_bottom_right p{ margin-top:14px; font-size:12px; color:#666666; line-height:30px; text-indent:0.8cm}
+
+
+.news_bottom_yi{ line-height:38px; border-bottom:1px dashed #bfbfbf;}
+.news_bottom_yi a{ float:left; font-size:12px; color:#666666;}
+.news_bottom_yi a:hover{ color:red;}
+.news_bottom_yi h2{ float:right; margin-right:10px; color:#666666; font-size:12px;}
+
+.media_coverage{ margin-top:50px;}
+.media_coverage_top{ border-bottom:2px solid #dbdbdb}
+.media_coverage_top h1{ margin-bottom:5px; float:left; font-size:16px; color:#333333; font-family:"黑体"; font-weight:bold;}
+.media_coverage_top a{ float:right; margin-right:10px; font-size:8px}
+
+.centent_right{ width:350px; height:auto;margin-top:20px; margin-left:30px; float:left;}
+
+.company_top{ border-bottom:2px solid #dbdbdb;}
+.company_top h1{ float:left; margin-bottom:5px; font-size:16px; color:#333333; font-family:"黑体"; font-weight:bold;}
+.company_top a{ float:right; margin-right:10px; font-size:8px;}
+.img{ margin-top:30px;}
+.img_top{ border-bottom:2px solid #dbdbdb;}
+.img_top h1{ font-size:16px; color:#333333; font-family:"黑体"; font-weight:bold; margin-bottom:5px;}
+.img_er{ margin-top:10px;}
+.img_san{ border-top:2px solid #dbdbdb; margin-top:10px;}
+.img_san a img{ margin-top:10px; float:left;}
+
+.bottom{ background-color:#2f3841; margin-top:20px;}
+.bottom_box{ width:1000px; margin:0 auto; height:200px;overflow:hidden;}
+.bottom_box_left{ width:460px; padding-top:50px;float:left;}
+.bottom_box_left_yi{color:#e6e6e6; border-bottom:1px dashed #c5c6c6; line-height:38px;}
+.bottom_box_left_yi a{ color:#e6e6e6;}
+.bottom_box_left_yi p{ color:#e6e6e6;}
+.bottom_box_right{ width:340px; margin-top:56px; float:left;}
+.bottom_box_right_yi{ width:100px; height:126px; float:left; margin-left:40px;}
+.bottom_box_right_yi img{ width:100%; height:auto;}
+.bottom_box_right_yi h1{ font-size:14px; color:#e6e6e6; text-align:center;}
+
+.nav_box ul li:hover{ background-color:#0CF;}
+.nav_box ul li:hover a{ color:#FFF;}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+<div class="top_box">
+	<div class="top_box_center">
+    	<img src="img/LOGO.png" />
+        <div class="top_box_center_right">
+        	<a href="">设为首页</a>
+            <a href="">收藏本站</a>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<div class="nav_box">
+	<ul>
+    	<li><a href="index.html">首页</a></li>
+        <li><a href="gaikuang.html">企业概况</a></li>
+        <li><a href="fazhan.html">发展规划</a></li>
+        <li><a href="xinwen.html">新闻中心</a></li>
+        <li><a href="wenhua.html">企业文化</a></li>
+        <li><a href="rencai.html">人才需求</a></li>
+        <div class="clearfix"></div>
+    </ul>
+</div>
+
+<div class="banner_container">
+	<div class="banner">
+    	<img src="img/img_08.jpg">
+        <img src="img/img_09.jpg">
+        <img src="img/img_10.jpg">
+        <img src="img/img_08.jpg">
+    </div>
+    <ul class="banner_btn">
+    	<li class="currentLi"></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+
+<div class="centent">
+	<div class="centent_left">
+    	<div class="news">
+        	<div class="news_top">
+            	<div class="news_top_top">
+                	<h1>公司新闻</h1>
+                    <a href="">more>></a>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="news_top_bottom">
+                	<div class="news_top_bottom_left">
+                    	<div class="example">
+                            <ul>
+                                <li><img src="img/1.jpg" alt="1"/></li>
+                                <li><img src="img/2.jpg" alt="2"/></li>
+                                <li><img src="img/3.jpg" alt="3"/></li>
+                                <li><img src="img/4.jpg" alt="4"/></li>
+                            </ul>
+                            <ol>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="news_top_bottom_right">
+                    	<h1>太化集团昨日正式召开产品博览会</h1>
+                        <p>8月24日、25日，在太原市十三届人大常委会第四十二次会议上听取和审议了太原市2016年国民经济和社会发展计划上半年执行情况的报告。太原将制定出台土壤污染防治行动计划，实施太化、煤气化污染土壤的调查评估及修复工程. . .<a href="">【查看详情】</a></p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="news_bottom">
+            	<div class="news_bottom_yi">
+                	<a href="">针对上半年的情况，太原市下半年将加大水环境治理力度. . .</a>
+                    <h2>17/10/07</h2>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="news_bottom_yi">
+                	<a href="">推进汾河南延三期美化工程建设，力争年底开工建设汾东污水处理厂. . .</a>
+                    <h2>17/10/08</h2>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="news_bottom_yi">
+                	<a href="">214项重大民生项目及事项中，93项已开工或开始实施. . .</a>
+                    <h2>17/10/09</h2>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="news_bottom_yi">
+                	<a href="">24个市直属项目学校、13个村办幼儿园、20所公办幼儿园建设正在按计划实施. . .</a>
+                    <h2>17/10/10</h2>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="news_bottom_yi">
+                	<a href="">136项城市重大基础设施项目已开工93项。五一路改造完成全线通车，滨河西路. . .</a>
+                    <h2>17/10/11</h2>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="news_bottom_yi">
+                	<a href="">此外，规模上工业增加值、固定资产投资、社会消费品零售总额. . .</a>
+                    <h2>17/10/12</h2>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+        <div class="media_coverage">
+        	<div class="media_coverage_top">
+            	<h1>媒体报道</h1>
+                <a href="">more>></a>
+                <div class="clearfix"></div>
+            </div>
+            <div class="news_bottom_yi">
+                <a href="">居民消费价格指数平均上涨0.8%，八大类消费价格“五升三降”. . .</a>
+                <h2>17/10/13</h2>
+                <div class="clearfix"></div>
+            </div>
+            <div class="news_bottom_yi">
+                <a href="">医疗保健类都呈上升态势，居住类、其他用品和服务类以及交通和. . .</a>
+                <h2>17/10/14</h2>
+                <div class="clearfix"></div>
+            </div>
+            <div class="news_bottom_yi">
+                <a href="">他强调，太化搬迁改造是我省推动产业转型、促进环境改善的重大举措，地方. . .</a>
+                <h2>17/10/15</h2>
+                <div class="clearfix"></div>
+            </div>
+            <div class="news_bottom_yi">
+                <a href="">农村常住居民人均可支配收入一共9项主要经济指标增速全部高于全省平均水平。</a>
+                <h2>17/10/16</h2>
+                <div class="clearfix"></div>
+            </div>
+            <div class="news_bottom_yi">
+                <a href="">煤气化污染土壤的调查评估及修复工程。</a>
+                <h2>17/10/17</h2>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <div class="centent_right">
+    	<div class="company">
+        	<div class="company_top">
+            	<h1>公司通告</h1>
+                <a href="">more>></a>
+                <div class="clearfix"></div>
+            </div>
+            <div class="news_bottom_yi">
+                <a href="">关于厂区内卫生情况通报</a>
+                <h2>17/10/18</h2>
+                <div class="clearfix"></div>
+            </div>
+            <div class="news_bottom_yi">
+                <a href="">上半年，太原市地区生产总值(GDP)完成 . . .</a>
+                <h2>17/10/19</h2>
+                <div class="clearfix"></div>
+            </div>
+            <div class="news_bottom_yi">
+                <a href="">在产业发展方面，90项重大产业项目已开. . .</a>
+                <h2>17/10/20</h2>
+                <div class="clearfix"></div>
+            </div>
+            <div class="news_bottom_yi">
+                <a href="">社会消费品零售总额增长7.4% . . .</a>
+                <h2>17/10/21</h2>
+                <div class="clearfix"></div>
+            </div>
+            <div class="news_bottom_yi">
+                <a href="">214项重大民生项目及事项中，93项已开工或 . . .</a>
+                <h2>17/10/22</h2>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="img">
+        	<div class="img_top">
+            	<h1>图说太化</h1>
+            </div>
+            <div class="img_er"><a href=""><img src="img/img_01.png" /></a></div>
+            <div class="img_er"><a href=""><img src="img/img_02.png" /></a></div>
+            <div class="img_san">
+            	<a href=""><img src="img/img_03.png" /></a>
+                <a href=""><img style="padding-left:25px" src="img/img_04.png" /></a>
+                <a href=""><img style="padding-left:25px" src="img/img_05.png" /></a>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<div class="bottom">
+	<div class="bottom_box">
+    	<div class="bottom_box_left">
+        	<div class="bottom_box_left_yi">
+            	<a href="">关于我们</a>&nbsp;|&nbsp;<a href="">联系我们</a>&nbsp;|&nbsp;<a href="">网站地图</a>&nbsp;|&nbsp;<a href="">联系方式</a>&nbsp;|&nbsp;<a href="">在线投稿</a>&nbsp;|&nbsp;<a href="">网站声明</a>
+            </div>
+            <div class="bottom_box_left_yi">
+            	<p>太化集团有限责任公司&nbsp;&nbsp;山西省太原市长风街</p>
+            </div>
+            <div class="bottom_box_left_yi">
+            	<p>版权所有太化集团&nbsp;www.taihua.com</p>
+            </div>
+        </div>
+        <div class="bottom_box_right">
+        	<div class="bottom_box_right_yi">
+            	<img src="img/img_06.png" />
+                <h1>手机APP</h1>
+            </div>
+            <div class="bottom_box_right_yi">
+            	<img src="img/img_06.png" />
+                <h1>微信公众号</h1>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+
+
+
+
+
+<script>
+/*重新设置banner宽度*/
+$(".banner").css({width:1920*$(".banner img").length});
+/*记录播放索引值*/
+var n=0;
+/*播放函数*/
+function runLeft(){
+	if(n<$(".banner img").length-1){
+	n=n+1;
+	}else{
+	$(".banner").css({marginLeft:-960});
+	n=1;
+	}
+	$(".banner").stop().animate({marginLeft:(-960-1920*n)},1000);
+	$(".banner_btn li").removeClass("currentLi");
+	if(n==$(".banner img").length-1){
+	$(".banner_btn li").eq(0).addClass("currentLi");
+	}else{
+	$(".banner_btn li").eq(n).addClass("currentLi");	
+	}
+}
+var timer=setInterval(runLeft,2000);
+$(".banner").mouseover(function(){
+	clearInterval(timer);
+})
+$(".banner").mouseout(function(){
+	timer=setInterval(runLeft,2000)
+})
+/*按钮控制*/
+
+$(".banner_btn li").hover(function(){
+	clearInterval(timer);
+	n = $(".banner_btn li").index(this);
+	$(".banner").stop().animate({marginLeft:(-960-1920*n)},1000);
+	$(".banner_btn li").removeClass("currentLi");
+	$(this).addClass("currentLi");
+},function(){
+	timer=setInterval(runLeft,2000);	
+})
+</script>
+
+<script>
+    $(function(){
+        <!--调用Luara示例-->
+        $(".example").luara({width:"290",height:"186",interval:4000,selected:"seleted"});
+
+    });
+</script>
+
+</body>
+</html>
